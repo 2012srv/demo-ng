@@ -1,1 +1,108 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+html {
+    // font-size: 62.5%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+body {
+    //     font-family: Roboto, "Helvetica Neue", sans-serif;
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-family);
+    background-color: var(--surface-0);
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.topbar {
+    height: 60px;
+    background-color: var(--surface-50);
+    color: var(--text-color);
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.main {
+    padding-top: 60px;
+    padding-left: 230px;
+}
+
+.navigation {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 230px;
+    background-color: var(--surface-50);
+    z-index: 2;
+
+    .nav-ul {
+        margin: 0;
+        padding: 16px 0 0 0;
+
+        li {
+            padding: 2px 16px;
+
+            a {
+                padding: 0 10px;
+                height: 40px;
+                transition: all 0.2s ease-in-out;
+                border-radius: 3px;
+
+                &.active {
+                    background-color: var(--primary-color);
+                    color: var(--surface-50);
+                }
+
+                &:hover {
+                    background-color: var(--surface-100);
+                    color: var(--primary-color);
+                }
+
+                i {
+                    &:first-child {
+                        width: 30px;
+                        opacity: 0.5;
+                    }
+
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+.logo-holder {
+    background-color: var(--surface-100);
+    height: 60px;
+
+    img {
+        height: 40px;
+        width: auto;
+    }
+}
+
+.no-body-space {
+    .p-card-body {
+        padding: 0;
+
+        .p-card-content {
+            padding: 0;
+        }
+    }
+}

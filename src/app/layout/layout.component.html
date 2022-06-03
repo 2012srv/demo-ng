@@ -1,0 +1,35 @@
+<div class="topbar">
+
+</div>
+<main class="main">
+    <div class="p-3">
+        <router-outlet></router-outlet>
+    </div>
+</main>
+<aside class="navigation flex flex-column">
+    <div class="logo-holder flex justify-content-center align-items-center">
+        <img src="assets/images/logo-light.png">
+    </div>
+    <div class="flex-grow-1">
+        <ul class="nav-ul">
+            <li *ngFor="let item of items;">
+                <a *ngIf="!item.children" routerLinkActive="active" pRipple [routerLink]="item.link"
+                    class="flex align-items-center">
+                    <i [class]="item.icon"></i><span>{{item.name}}</span>
+                </a>
+                <a *ngIf="item.children" pRipple class="flex align-items-center">
+                    <i [class]="item.icon"></i><span class="flex-grow-1">{{item.name}}</span><i
+                        class="pi pi-angle-down"></i>
+                </a>
+                <ul class="p-0 m-0" *ngIf="item.children">
+                    <li *ngFor="let subItem of item.children;">
+                        <a routerLinkActive="active" pRipple [routerLink]="subItem.link"
+                            class="flex align-items-center">
+                            <i [class]="subItem.icon"></i><span>{{subItem.name}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</aside>
